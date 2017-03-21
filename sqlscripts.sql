@@ -1,3 +1,5 @@
+#GRANT ALL PRIVILEGES ON attendance.* TO 'uibatch5'@'%' WITH GRANT OPTION;
+
 #drops schema if it exists
 DROP SCHEMA `attendance`;
 CREATE SCHEMA `attendance` ;
@@ -67,3 +69,5 @@ CREATE TABLE `attendance`.`consultanttbl` (
     ON UPDATE NO ACTION);
 
 INSERT INTO `attendance`.`consultanttbl` (`firsrname`, `lastname`, `phone`, `email`, `address`, `city`, `state`, `zip`, `ssn`, `workstatusid`, `driverlicense`, `issuedstate`, `trainingprogram`) VALUES ('George', 'Harrison', '123-123-1233', 'george@gmail.com', 'test street', 'abby', 'MN', '21230', '123-12-1233', '1', '123', 'MN', '1');
+
+INSERT INTO `attendance`.`consultanttbl` (`firsrname`, `lastname`, `middlename`, `phone`, `email`, `address`, `city`, `state`, `zip`, `ssn`, `workstatusid`) VALUES ('Donald', 'Trump', 'dumbass', '123-123-1233', 'trump@gmail.com', 'wall street', 'New York', 'NY', '12312', '123-12-1234', '7');
