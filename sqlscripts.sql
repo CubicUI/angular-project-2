@@ -20,7 +20,7 @@ INSERT INTO `attendance`.`classtbl` (`title`, `active`) VALUES ('Angular', '1');
 INSERT INTO `attendance`.`classtbl` (`title`, `active`) VALUES ('linux', '0');
 
 #creating attendance table
-CREATE TABLE `attendance`.`workstatus` (
+CREATE TABLE `attendance`.`workstatustbl` (
   `workstatusid` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(45) NOT NULL,
   `active` INT NOT NULL,
@@ -28,13 +28,13 @@ CREATE TABLE `attendance`.`workstatus` (
   UNIQUE INDEX `workstatusid_UNIQUE` (`workstatusid` ASC));
   
 #inserting information table
-INSERT INTO `attendance`.`workstatus` (`title`, `active`) VALUES ('US Citizen', '1');
-INSERT INTO `attendance`.`workstatus` (`title`, `active`) VALUES ('Green Card', '1');
-INSERT INTO `attendance`.`workstatus` (`title`, `active`) VALUES ('EAD (GC)', '1');
-INSERT INTO `attendance`.`workstatus` (`title`, `active`) VALUES ('Work Permit', '1');
-INSERT INTO `attendance`.`workstatus` (`title`, `active`) VALUES ('EAD(TPS)', '1');
-INSERT INTO `attendance`.`workstatus` (`title`, `active`) VALUES ('EAD(OPT)', '1');
-INSERT INTO `attendance`.`workstatus` (`title`, `active`) VALUES ('EAD(CPT)', '1');
+INSERT INTO `attendance`.`workstatustbl` (`title`, `active`) VALUES ('US Citizen', '1');
+INSERT INTO `attendance`.`workstatustbl` (`title`, `active`) VALUES ('Green Card', '1');
+INSERT INTO `attendance`.`workstatustbl` (`title`, `active`) VALUES ('EAD (GC)', '1');
+INSERT INTO `attendance`.`workstatustbl` (`title`, `active`) VALUES ('Work Permit', '1');
+INSERT INTO `attendance`.`workstatustbl` (`title`, `active`) VALUES ('EAD(TPS)', '1');
+INSERT INTO `attendance`.`workstatustbl` (`title`, `active`) VALUES ('EAD(OPT)', '1');
+INSERT INTO `attendance`.`workstatustbl` (`title`, `active`) VALUES ('EAD(CPT)', '1');
 
 CREATE TABLE `attendance`.`consultanttbl` (
   `consultantid` INT NOT NULL AUTO_INCREMENT,
@@ -59,7 +59,7 @@ CREATE TABLE `attendance`.`consultanttbl` (
   INDEX `trainingid_idx` (`trainingprogram` ASC),
   CONSTRAINT `workstatusid`
     FOREIGN KEY (`workstatusid`)
-    REFERENCES `attendance`.`workstatus` (`workstatusid`)
+    REFERENCES `attendance`.`workstatustbl` (`workstatusid`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `trainingid`
