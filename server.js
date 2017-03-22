@@ -49,8 +49,8 @@ var services ={
             "params":[]
         },
         "put":{
-            "url":"/service/class/:classid",
-            "query":"UPDATE classtbl SET ? WHERE companyid = ?",
+            "url":"/service/class/:id",
+            "query":"UPDATE classtbl SET ? WHERE classid = ?",
             "params":[]
         },
         "delete":{
@@ -83,7 +83,7 @@ var services ={
             "params":[]
         },
         "put":{
-            "url":"/service/workstatus/:workstatusid",
+            "url":"/service/workstatus/:id",
             "query":"UPDATE workstatustbl SET ? WHERE workstatusid = ?",
             "params":[]
         },
@@ -93,6 +93,7 @@ var services ={
             "params":["workstatusid"]
         }
     }
+    
 
 };
 console.log("Service API collections instantiated...");
