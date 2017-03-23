@@ -4,7 +4,7 @@ angular.module("attendance").service("studentService",[function(){
     var studentArray=[];
     //function to add new element into the array
     this.addStudent=function(student){
-        studentArray.push(student);
+        studentArray.push(angular.copy(student));
     };
     
     //function to get the student list

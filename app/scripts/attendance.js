@@ -7,10 +7,12 @@ angular.module("attendance",['ngMaterial','ui.router'])
         
         $stateProvider.state('studentForm',{
             url:"/studentForm",
-            templateUrl: '/app/views/studentForm.html'
+            templateUrl: '/app/views/studentForm.html',
+            controller:"studentFormCtrl"
         }).state("studentTable",{
             url:"/studentTable",
-            templateUrl:'/app/views/studentTable.html'
+            templateUrl:'/app/views/studentTable.html',
+            controller:"studentTableCtrl"
         });
        
     }]);
