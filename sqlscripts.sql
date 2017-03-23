@@ -38,7 +38,7 @@ INSERT INTO `attendance`.`workstatustbl` (`title`, `active`) VALUES ('EAD(CPT)',
 
 CREATE TABLE `attendance`.`consultanttbl` (
   `consultantid` INT NOT NULL AUTO_INCREMENT,
-  `firsrname` VARCHAR(20) NOT NULL,
+  `firstname` VARCHAR(20) NOT NULL,
   `lastname` VARCHAR(20) NOT NULL,
   `middlename` VARCHAR(15) NULL,
   `phone` VARCHAR(20) NOT NULL,
