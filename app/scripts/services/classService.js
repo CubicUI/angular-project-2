@@ -1,4 +1,4 @@
-angular.module("attendance").service("employeeService",['$http',function($http){
+angular.module("attendance").service("classService",['$http',function($http){
     this.employeeList = [];
     var that = this;
     
