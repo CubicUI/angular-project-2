@@ -18,6 +18,10 @@ angular.module("attendance",['ngMaterial','ui.router'])
         }).state("home",{
             url:"/home",
             template:"<h1>Home page found</h1>"
+        }).state("class",{
+            url:"/class",
+            templateUrl:"/app/views/classForm.html",
+            controller:"classCtrl"
         });
        
     }]);
