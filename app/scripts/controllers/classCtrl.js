@@ -1,17 +1,44 @@
 "use strict";
 angular.module("attendance").controller("classCtrl",["$scope","$http","classService",function($scope,$http,classService){
-    var employeeListActive;
-    var employeeListAll;
+    $scope.classFormModel = {
+        title:"",
+        active:""
+    }
+    
+    $scope.classListActive;
+    $scope.classListAll;
+    $scope.classListId;
+    
     //Calling service to get class list
-    var employeeListPromise = employeeService.getEmployeeList();
-    employeeListPromise.then(function(response){
-        $scope.employeeListActive = response;
+    var classListPromise = classService.getClassListActive();
+    var classListPromise2 = classService.getClassListAll();
+    var classListPromise3 = classService.getClassListId(2);
+    
+    classListPromise.then(function(response){
+        $scope.classListActive = response;
     });
     
-    var employeeListPromise2 = employeeService.getEmployeeListAll();
-    employeeListPromise.then(function(response){
-        $scope.employeeListAll = response;
+    
+    classListPromise2.then(function(response){
+        $scope.classListAll = response;
     });
+    
+    classListPromise3.then(function(response){
+        $scope.classListId = response;
+    });
+    
+
+    
+    $scope.classSubmit=function(){
+        console.log($scope.classListActive);
+        console.log($scope.classListAll);
+        console.log($scope.classListId);
+    }
+    $scope.testPromises=function(){
+        console.log($scope.classListActive);
+        console.log($scope.classListAll);
+        console.log($scope.classListId);
+    }
     
     
 }]);

@@ -1,37 +1,41 @@
 angular.module("attendance").service("classService",['$http',function($http){
-    this.employeeList = [];
+    this.classList = [];
+    this.classListAll = [];
+    this.classListId = [];
     var that = this;
     
-    this.getEmployeeList = function(){
+    this.getClassListActive = function(){
         return $http({
             method:"GET",
             url:"/service/class"
         }).then(function(result){
-            that.employeeList = result.data;
+            that.classList = result.data;
             return result.data
         });
     };
     
-    this.getEmployeeListAll = function(){
+    this.getClassListAll = function(){
         return $http({
             method:"GET",
             url:"/service/class/all"
         }).then(function(result){
-            that.employeeList = result.data;
+            that.classListAll = result.data;
             return result.data
         });
     };
     
-    this.getEmployeeListId = function(id){
+    
+    this.getClassListId = function(id){
         return $http({
             method:"GET",
             url:"/service/class/"+id
         }).then(function(result){
-            that.employeeList = result.data;
+            that.classListId = result.data;
             return result.data
         });
     }
-    this.postEmployee = function(dataParam){
+    
+    this.postClass = function(dataParam){
         return $http({
             method:"POST",
             url:"/service/class",

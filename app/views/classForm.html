@@ -1,1 +1,16 @@
 <h1>Have class forms included here</h1>
+<form name="classForm">
+    <md-input-container>
+        <input type="text" md-input ng-model="classFormModel.title" placeholder="Enter Class Name">
+    </md-input-container>
+    <md-radio-group ng-model="classFormModel.active">
+
+          <md-radio-button ng-value="1">Active</md-radio-button>
+        
+          <md-radio-button ng-value="0">Inactive</md-radio-button>
+
+    </md-radio-group>
+    <button class="btn btn-success" ng-click="classSubmit()">Submit</button>
+</form>
+{{classFormModel}}
+<button class="btn btn-success" ng-click="testPromises()">Promises</button>
