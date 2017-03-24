@@ -34,7 +34,10 @@ angular.module("attendance").service("classService",['$http',function($http){
             return result.data
         });
     }
-    
+    var sampleTest={
+        "title":"test123",
+        "active":1
+    }
     this.postClass = function(dataParam){
         return $http({
             method:"POST",

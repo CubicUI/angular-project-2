@@ -27,8 +27,14 @@ angular.module("attendance").controller("classCtrl",["$scope","$http","classServ
         $scope.classListId = response;
     });
     
-
-    
+    var sampleTest={
+        "title":"test123",
+        "active":1
+    }
+    var classPost = classService.postClass($scope.classFormModel);
+    classPost.then(function(response){
+        alert("success");
+    })
     $scope.classSubmit=function(){
         console.log($scope.classListActive);
         console.log($scope.classListAll);
